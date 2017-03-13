@@ -48,5 +48,18 @@ public class SimpleEcho {
         {
             Logger.getLogger(SimpleEcho.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        // This simulates the Client
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("[CLIENT][" + clientIpAddress + "][" + dateFormat.format(new Date()) + "] - Please enter a message to send to the server: ");
+        String message = scanner.nextLine();
+        System.out.println();
+        System.out.println("[CLIENT][" + clientIpAddress + "][" + dateFormat.format(new Date()) + "] - The client is sending back to the server the following message: " + message);
+
+        // This simulates the Server
+        System.out.println("[SERVER][" + clientIpAddress + "][" + dateFormat.format(new Date()) + "] - The server has received following message: " + message);
+        System.out.println("[SERVER][" + clientIpAddress + "][" + dateFormat.format(new Date()) + "] - The server is sending back to the client the following message: " + message);
+
+        // This simulates the Client
+        System.out.println("[CLIENT][" + clientIpAddress + "][" + dateFormat.format(new Date()) + "] - The client has received following message: " + message);
+    }
 }
