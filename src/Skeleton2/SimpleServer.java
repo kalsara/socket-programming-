@@ -30,5 +30,23 @@ public class SimpleServer {
      *
      * @throws UnknownHostException
      */
-    
+    public SimpleServer() throws UnknownHostException {
+        /*
+         This is to print the details of client and server
+         */
+        System.out.println("[SERVER][" + dateFormat.format(new Date()) + "] - Initializing Simple Server");
+        ipAddress = InetAddress.getLocalHost();
+        hostname = InetAddress.getLocalHost().getHostName();
+    }
+
+    public String sendMessage() {
+        System.out.println("[SERVER][" + ipAddress + "][" + dateFormat.format(new Date()) + "] - The server is sending the following message: " + message);
+        return message;
+    }
+
+    public void receiveMessage(String msg) 
+    {
+        System.out.println("[SERVER][" + ipAddress + "][" + dateFormat.format(new Date()) + "] - The server has received following message: " + msg);
+        message =   msg;
+    }
 }
